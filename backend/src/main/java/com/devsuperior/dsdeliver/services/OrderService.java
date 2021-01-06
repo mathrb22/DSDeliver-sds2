@@ -33,6 +33,7 @@ public class OrderService {
 	
 	@Transactional
 	public OrderDTO insert(OrderDTO dto) {
+		//Create a new instance of the Order entity with the attributes:
 		Order order = new Order(null, dto.getAddress(), dto.getLatitude(), dto.getLongitude(),
 								Instant.now(), OrderStatus.PENDING);
 		//For each ProductDTO in the OrderDTO's product list:
@@ -43,6 +44,19 @@ public class OrderService {
 		}
 		//Save the order in the database:
 		order = repository.save(order);
+		//Return the OrderDTO object:
+		return new OrderDTO(order);
+	}
+	
+	@Transactional
+	public OrderDTO setDelivered(Long id) {
+		//Get the specified Order by id:
+		Order order = repository.getOne(id);
+		//Set the new status:
+		order.setStatus(OrderStatus.DELIVERED);
+		//Save the order in the database:
+		order = repository.save(order);
+		//Return the OrderDTO object:
 		return new OrderDTO(order);
 	}
 	
