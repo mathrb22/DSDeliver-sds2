@@ -1,0 +1,130 @@
+.home-container {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	height: calc(100vh - 254px);
+}
+
+.home-container h1 {
+	margin: 0;
+}
+
+.home-actions {
+	/* margin-left: 50px; */
+	width: 100%;
+	max-width: 500px;
+	/* margin-right: 30px; */
+}
+
+.home-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly; /* alinhar os itens HORIZONTALMENTE AO CENTRO */
+	margin: 0 50px;
+}
+
+.home-title {
+	font-weight: bold;
+	font-size: 45px;
+	line-height: 58px;
+	letter-spacing: -0.015em;
+	color: var(--dark-color);
+}
+
+.home-subtitle {
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 33px;
+	letter-spacing: -0.015em;
+	color: var(--secondary-color);
+	margin-bottom: 30px;
+}
+
+.home-btn-order {
+	background-color: var(--primary-color);
+	border-radius: 10px;
+	height: 70px;
+	width: 235px;
+	display: inline-block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 24px;
+	letter-spacing: -0.015em;
+	color: #fff;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+}
+
+.home-btn-order:hover {
+	background-color: var(--primary-hover-color);
+	transform: scale(1.02);
+}
+
+.home-image svg {
+	width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+	.home-container {
+		height: auto;
+		margin-bottom: 50px;
+		padding: 0 50px;
+	}
+
+	.home-content {
+		flex-direction: column-reverse;
+	}
+
+	.home-title {
+		font-size: 40px;
+		text-align: center;
+	}
+
+	.home-subtitle {
+		text-align: center;
+		margin-bottom: 24px;
+	}
+
+	.home-actions {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.home-image {
+		text-align: center;
+	}
+
+	.home-image svg {
+		margin: 50px auto;
+		width: 90%;
+		min-width: 80%;
+		height: 80%;
+	}
+
+	.home-btn-order {
+		margin-top: 24px;
+	}
+}
+
+@media (max-height: 700px) {
+	.home-container {
+		height: auto;
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 508px) {
+	.home-container {
+		padding: 0 40px;
+	}
+}
+
+@media (max-width: 350px) {
+	.home-title {
+		font-size: 35px;
+		line-height: 48px;
+	}
+}
