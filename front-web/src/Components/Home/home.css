@@ -1,7 +1,7 @@
 .home-container {
-	padding-top: 50px;
+	padding-top: 56px;
 	padding-bottom: 50px;
-	height: calc(100vh - 254px);
+	height: calc(100vh - 258px);
 }
 
 .home-container h1 {
@@ -9,16 +9,14 @@
 }
 
 .home-actions {
-	/* margin-left: 50px; */
 	width: 100%;
 	max-width: 500px;
-	/* margin-right: 30px; */
 }
 
 .home-content {
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly; /* alinhar os itens HORIZONTALMENTE AO CENTRO */
+	justify-content: space-evenly;
 	margin: 0 50px;
 }
 
@@ -112,7 +110,6 @@
 @media (max-height: 700px) {
 	.home-container {
 		height: auto;
-		margin-bottom: 30px;
 	}
 }
 
