@@ -1,9 +1,14 @@
 import './home.css';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 import { ReactComponent as DeliverImage } from './image-deliver.svg';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Home() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<>
 			<div className='home-container'>
@@ -22,7 +27,7 @@ function Home() {
 					</div>
 				</div>
 			</div>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }
