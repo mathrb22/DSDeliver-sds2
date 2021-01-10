@@ -4,12 +4,12 @@ import OrderLocation from './OrderLocation/OrderLocation';
 import './orders.css';
 import ProductsList from './ProductsList/ProductsList';
 import StepsHeader from './StepsHeader/StepsHeader';
-import { Product } from './types';
+import { OrderLocationData, Product } from './types';
 
 function Orders() {
 	const [products, setProducts] = useState<Product[]>([]);
 
-	console.log(products);
+	const [orderLocation, setOrderLocation] = useState<OrderLocationData>();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -22,7 +22,7 @@ function Orders() {
 		<div className='orders-container'>
 			<StepsHeader />
 			<ProductsList products={products} />
-			<OrderLocation />
+			<OrderLocation onChangeLocation={(location) => setOrderLocation(location)} />
 		</div>
 	);
 }
