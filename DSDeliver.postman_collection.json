@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "54cb1b7a-8556-4caf-9a6a-1ba5ed7b8633",
+		"name": "DSDeliver",
+		"description": "Collection of requests for the DSDeliver web app developed during the event \"Semana DevSuperior 2.0\"",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/products",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/orders",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"Avenida Paulista, 1500\",\r\n    \"latitude\": -23.56168,\r\n    \"longitude\": -46.656139,\r\n    \"products\": [\r\n        {\r\n            \"id\": 2 \r\n        },\r\n        {\r\n            \"id\": 5\r\n        }\r\n\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/orders",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set delivered",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/orders/8/delivered",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"orders",
+						"8",
+						"delivered"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
