@@ -8,11 +8,14 @@ import ProductsList from './ProductsList/ProductsList';
 import StepsHeader from './StepsHeader/StepsHeader';
 import { OrderLocationData, Product } from './types';
 import './orders.css';
+import Loading from '../Loading/Loading';
 
 function Orders() {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
 	const [orderLocation, setOrderLocation] = useState<OrderLocationData>();
+	const [loading, setLoading] = useState(false);
+	const [resError, setResError] = useState(false);
 	const totalPrice = selectedProducts.reduce((sum, item) => {
 		return sum + item.price;
 	}, 0);
@@ -20,8 +23,12 @@ function Orders() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 		fetchProducts()
-			.then((response) => setProducts(response.data))
+			.then((response) => {
+				setLoading(true);
+				setProducts(response.data);
+			})
 			.catch((error) => {
+				setResError(true);
 				toast.warning('Erro ao listar produtos! Tente recarregar a página.');
 			});
 	}, []);
@@ -67,11 +74,16 @@ function Orders() {
 		<>
 			<div className='orders-container'>
 				<StepsHeader />
-				<ProductsList
-					products={products}
-					onSelectProduct={handleSelectProduct}
-					selectedProducts={selectedProducts}
-				/>
+
+				{loading === true ? (
+					<ProductsList
+						products={products}
+						onSelectProduct={handleSelectProduct}
+						selectedProducts={selectedProducts}
+					/>
+				) : resError === false ? (
+					<Loading message='Carregando produtos...' />
+				) : null}
 				<OrderLocation
 					onChangeLocation={(location) => setOrderLocation(location)}
 				/>
