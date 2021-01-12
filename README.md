@@ -87,6 +87,8 @@ Esta é uma aplicação que registra os pedidos realizados pelos clientes dos re
 
 ✔ Página de erro 404 personalizada para rotas inexistentes
 
+✔ Indicador de Loading durante o carregamento dos dados dos produtos pelo heroku 
+
 - [ ] Acompanhamento de pedidos pendentes pelo app mobile (em desenvolvimento)
 - [ ] Criação de rotas de navegação GPS - app mobile (em desenvolvimento)
 - [ ] Confirmação das entregas - app mobile (em desenvolvimento)
