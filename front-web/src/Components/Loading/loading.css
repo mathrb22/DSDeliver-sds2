@@ -1,0 +1,22 @@
+.loading-container {
+	padding: 30px 30px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loading-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	align-self: center;
+	width: max-content;
+	height: 50px;
+}
+
+.loading-message {
+	margin-left: 10px;
+	font-size: 18px;
+	color: #da5c5c;
+}
